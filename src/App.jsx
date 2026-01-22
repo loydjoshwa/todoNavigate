@@ -6,11 +6,12 @@ import { Route, Routes } from 'react-router-dom'
 
 const App = () => {
   const [dlt,setDlt]=useState([])
+    const [store,setStore]=useState([]);
 
 
   return (
     <div>
-      <MyContext.Provider value={{dlt,setDlt}}>
+      <MyContext.Provider value={{dlt,setDlt,store,setStore}}>
         <Routes>
         <Route path='/' element={<Item />} /> 
          <Route path='/delitem' element={<Delitem  />} /> 

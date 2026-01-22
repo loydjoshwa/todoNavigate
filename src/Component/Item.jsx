@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom'
 
 const Item = () => {
   const [text,setText]=useState("")
-  const [store,setStore]=useState([]);
+
   const [id,setId]=useState(1)
 
-  const {setDlt,dlt} = useContext(Mycontext)
+  const {setDlt,dlt,store,setStore} = useContext(Mycontext)
   
   
 
@@ -32,7 +32,7 @@ const Item = () => {
       </div>
       <div>
         {store.map((item)=>(
-          <li key={item.id}>{item.text} <button onClick={()=>handleEdit(item)}>edit</button><button onClick={()=>handleDelete(item)}>Delete</button></li>
+          <li key={item.id}>{item.text} <button onClick={()=>handleEdit(item)}>edit</button><button onClick={()=>handleDelete(item)}><Link to={"/delitem"}>Delete</Link></button></li>
          
         ))}
       </div>
